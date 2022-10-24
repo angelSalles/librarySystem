@@ -68,6 +68,7 @@ module.exports = {
     },
     excluir: async(req,res)=>{
         let json = {error:'', result:{}};
+        console.log(req.params);
         await LivroService.excluir(req.params.isbn)
         res.json(json);
     }

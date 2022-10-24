@@ -21,7 +21,10 @@
                 <td>{{livro.copies_available}}</td>
                 <td>{{livro.author}}</td>
                 <td>{{livro.number_pages}}</td>
-                <td><button (click)="getLivroUnico(livro.isbn)" routerLink="/adicionar">Editar</button></td>
+                <td>
+                    <button (click)="getLivroUnico(livro.isbn)" routerLink="/adicionar">Editar</button>
+                    <button (click)="deleteLivro(livro.isbn)">Remover</button>
+                </td>
             </tr>
         </tbody>
     </table>

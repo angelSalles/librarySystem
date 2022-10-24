@@ -37,16 +37,11 @@ export class LivroService {
   }
 
   updateLivro(livro: any): Observable<Livro> {
-
-    return this.httpClient.put<Livro>(this.url + '/' + livro.isbn, JSON.stringify(livro), this.httpOptions)
+    return this.httpClient.put<Livro>(this.url + '/livro/' + livro.isbn, livro, this.httpOptions)
   }
 
-  deleteLivro(livro: any) {
-    return this.httpClient.delete<Livro>(this.url + '/' + livro.isbn, this.httpOptions)
-      .pipe(
-        retry(1),
-        catchError(this.handleError)
-      )
+  deleteLivro(isbn: any) {
+    return this.httpClient.delete<Livro>(`${this.url}/livro/${isbn}`, this.httpOptions)
   }
 
   handleError(error: HttpErrorResponse) {

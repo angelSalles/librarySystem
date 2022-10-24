@@ -18,7 +18,6 @@ export class LivrosComponent implements OnInit {
   
   ngOnInit() {
     this.getLivro();
-    localStorage.removeItem("isbn");
   }
 
   btnClick() {
@@ -43,8 +42,8 @@ export class LivrosComponent implements OnInit {
     });
   }
 
-  getLivroUnico(isbn: any){
-    this.livroService.getLivroByISBN(isbn).subscribe((isbn)=>{
+  async getLivroUnico(isbn: any){
+    await this.livroService.getLivroByISBN(isbn).subscribe((isbn)=>{
       localStorage.setItem("isbn", JSON.stringify(isbn));
     });
   }
