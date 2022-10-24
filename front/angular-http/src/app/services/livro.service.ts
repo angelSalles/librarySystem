@@ -14,7 +14,7 @@ export class LivroService {
   constructor(private httpClient: HttpClient) { }
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
   getLivro(): Observable<Livro[]> {
@@ -33,7 +33,7 @@ export class LivroService {
     params = params.append('author', livro.author);
     params = params.append('number_pages', livro.number_pages);
     params = params.append('copies_available', livro.copies_available);
-    return this.httpClient.post<Livro>(`${this.url}/newLivro`, {params:params}, this.httpOptions)
+    return this.httpClient.post<Livro>(`${this.url}/newLivro`, livro, this.httpOptions)
   }
 
   updateLivro(livro: any): Observable<Livro> {

@@ -3,20 +3,26 @@
         <h1>Livros</h1> 
         <button class="adicionar" routerLink="/adicionar">Adicionar um novo livro</button>
     </header>
-    <div id="renderResults" *ngFor="let livro of livros.result;">
-        
-        <table>
-            <caption>Listar livros</caption>
+    <table>
+        <thead>
             <tr>
-
+                <th>ISBN</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Number Pages</th>
+                <th>Copies copies_available</th>
+                <th>Options</th>
             </tr>
-        </table>
-        {{livro.isbn}}
-        {{livro.book_name}}
-        {{livro.author}}
-        {{livro.number_pages}}
-        {{livro.copies_available}}
-        
-        <button (click)="getLivroUnico(livro.isbn)" routerLink="/adicionar">Editar</button>
-    </div>
+        </thead>
+        <tbody>
+            <tr id="renderResults" *ngFor="let livro of livros.result;">
+                <td>{{livro.isbn}}</td>
+                <td>{{livro.book_name}}</td>
+                <td>{{livro.copies_available}}</td>
+                <td>{{livro.author}}</td>
+                <td>{{livro.number_pages}}</td>
+                <td><button (click)="getLivroUnico(livro.isbn)" routerLink="/adicionar">Editar</button></td>
+            </tr>
+        </tbody>
+    </table>
 </main>

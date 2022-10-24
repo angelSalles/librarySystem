@@ -2,8 +2,30 @@
     margin: auto;
     width: 1133px;
     height: 500px;
+    margin-bottom: 100px;
 }
 
 .header-main-content{
     display: flex;
+    
+}
+
+.main-content table{
+    margin: auto;
+    
+}
+
+.main-content table td, .main-content table th{
+    margin: auto;
+    background-color: rgb(247, 247, 247);
+    padding: 5px;
+    text-align: center;
+    height: 30px;
+    width: 100px; 
+}
+
+.adicionar{
+    width: 200px;
+    height: 30px;
+    margin-left: 800px;
 }
