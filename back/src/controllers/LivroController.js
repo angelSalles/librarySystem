@@ -34,6 +34,8 @@ module.exports = {
         let number_pages = req.body.number_pages;
         let copies_available = req.body.copies_available;
 
+        console.log(req.params);
+
         if(isbn && book_name && author && number_pages && copies_available){
             await LivroService.inserir(isbn, book_name, author, number_pages, copies_available)
             json.result = {
