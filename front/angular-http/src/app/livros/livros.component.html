@@ -1,0 +1,22 @@
+<main class="main-content">
+    <header class="header-main-content">
+        <h1>Livros</h1> 
+        <button class="adicionar" routerLink="/adicionar">Adicionar um novo livro</button>
+    </header>
+    <div id="renderResults" *ngFor="let livro of livros.result;">
+        
+        <table>
+            <caption>Listar livros</caption>
+            <tr>
+
+            </tr>
+        </table>
+        {{livro.isbn}}
+        {{livro.book_name}}
+        {{livro.author}}
+        {{livro.number_pages}}
+        {{livro.copies_available}}
+        
+        <button (click)="getLivroUnico(livro.isbn)" routerLink="/adicionar">Editar</button>
+    </div>
+</main>

@@ -1,0 +1,9 @@
+.main-content{
+    margin: auto;
+    width: 1133px;
+    height: 500px;
+}
+
+.header-main-content{
+    display: flex;
+}

@@ -1,0 +1,22 @@
+<main class="main-content">
+    <form [formGroup]="bioSection" (ngSubmit)="callingFunction()" method="POST" class="formAdicionar">
+        <legend>Novo Livro</legend>
+
+        <label for="isbn">ISBN</label>
+        <input type="text" id="isbn" name="isbn" required formControlName="isbn">
+
+        <label for="book_name">Nome do Livro</label>
+        <input type="text" id="book_name" name="book_name" required formControlName="book_name">
+
+        <label for="author">Nome do Autor</label>
+        <input type="text" id="author" name="author" autofocus required formControlName="author">
+
+        <label for="number_pages">Número de páginas</label>
+        <input type="text" id="number_pages" name="number_pages" required formControlName="number_pages">
+
+        <label for="copies_available">Número de cópias</label>
+        <input type="text" id="copies_available" name="copies_available" required formControlName="copies_available">
+
+        <input type="submit" value="cadastrar">
+    </form>   
+</main>
